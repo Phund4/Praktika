@@ -1,0 +1,26 @@
+CREATE TABLE
+    "vacancies" (
+        Address_building VARCHAR(255),
+        Address_city VARCHAR(255),
+        Address_description VARCHAR(255),
+        Address_metro_line_name VARCHAR(255),
+        Address_metro_station_name VARCHAR(255),
+        Address_street VARCHAR(255),
+        Area_name VARCHAR(255),
+        Contacts_email VARCHAR(255),
+        Contacts_name VARCHAR(255),
+        Contacts_phone VARCHAR(255),
+        Created_at VARCHAR(255),
+        Description VARCHAR(255),
+        Employment_name VARCHAR(255),
+        Experience_name VARCHAR(255),
+        ID VARCHAR(255),
+        Key_skills VARCHAR(255),
+        Languages_name VARCHAR(255),
+        Name VARCHAR(255),
+        Professional_roles_name VARCHAR(255),
+        Salary_currency VARCHAR(255),
+        Salary_from VARCHAR(255),
+        Salary_to VARCHAR(255),
+        Schedule_name VARCHAR(255)
+    )

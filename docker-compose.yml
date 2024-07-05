@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./praktikaBack
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - my_db
+    environment:
+      - DATABASE_URL=postgresql://phunda:098908@my_db:5432/hh_praktika
+      - HOST=my_db
+      - PORT=5432
+      - USER=phunda
+      - PASSWORD=098908
+      - DBNAME=hh_praktika
+      - SERVER_HOST=localhost
+      - SERVER_PORT=8080
+    command: ["/app/create_env.sh"]
+
+  frontend:
+    build:
+      context: ./praktikaFront
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+  my_db:
+    image: postgres:13
+    container_name: my_db
+    ports:
+      - "5400:5400"
+    environment:
+      - POSTGRES_USER=phunda
+      - POSTGRES_PASSWORD=098908
+      - POSTGRES_DB=hh_praktika
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
