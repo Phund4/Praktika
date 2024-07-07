@@ -30,7 +30,7 @@ praktikaBack:
 - `schema`: Схема данных PostgreSQL.
 
 praktikaFront:
-`src`:
+src:
 - `SearchBar.jsx`: Код компонента поиска.
 - `SelectBox.jsx`: Код компонента фильтрационного юнита.
 - `Router.jsx`: Код роутера приложения.
